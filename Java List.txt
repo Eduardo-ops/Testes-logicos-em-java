@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.util.LinkedList;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        
+        int test = scan.nextInt();
+        
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        
+	/*  
+         * Adicionando valores na lista criada acima. 
+         */
+        for (int i = 0; i < test; i++) {
+                int value = scan.nextInt();
+            list.add(value);
+        }
+        
+        int cons = scan.nextInt();
+	System.out.println("Consultas: " + Integer.toString(cons));
+            
+        for (int i = 0; i < cons; i++) {
+                String action = scan.next();
+	System.out.println("Operação atual: " + operation);
+                
+            if (action.equalsIgnoreCase("Insert")) {
+                    int index = scan.nextInt();
+                    int value = scan.nextInt();
+	System.out.println("Inserindo elemento: " + Integer.toString(value) + " into index: " + Integer.toString(index));
+                list.add(index, value);
+                
+            } else {
+                    int index = scan.nextInt();
+ 	System.out.println("Removendo o elemento do index: " + Integer.toString(index));
+                list.remove(index);
+            }
+        }
+        
+        scan.close();
+        
+        for (Integer num : list) {
+            System.out.print(num + " ");
+        }
+    }
+}

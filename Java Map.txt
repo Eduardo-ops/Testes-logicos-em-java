@@ -1,0 +1,39 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+class Solution{
+	public static void main(String []argh){
+	
+	/*  
+         * Declarações de variáveis e HashMap
+         */	
+        HashMap<String, Integer> hash = new HashMap<String, Integer>();
+        Scanner ler = new Scanner(System.in);
+        String nome = "";
+        String teste = "";
+        int telefone = 0;
+        
+	System.out.println("Informe a quantidade:");
+        int n = ler.nextInt();
+        ler.nextLine();
+        
+        for(int i = 0; i < n; i++){
+	    System.out.println("Informe o nome:");
+            nome = ler.nextLine();
+	    System.out.println("Informe o telefone:");
+            telefone = ler.nextInt();
+            ler.nextLine();
+            
+            hash.put(nome, telefone);
+        }
+        while(ler.hasNext()){
+            teste = ler.nextLine();
+            if(hash.containsKey(teste)){
+                System.out.println(teste + "=" + hash.get(teste));
+            }else{
+                System.out.println("Not found");
+            }
+        }
+        ler.close();
+	}
+}

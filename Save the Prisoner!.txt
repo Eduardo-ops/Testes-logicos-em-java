@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args){
+        
+        /*  
+         * Scanner para leitura de entradas  
+         */
+        Scanner read = new Scanner(System.in);
+
+        /*  
+         * Declaração de variáveis 
+         */
+        int ultimoSelecionado = 0;
+        
+        System.out.println("Informe a quantidade de testes a ser realizado:");
+        int teste = read.nextInt();
+        
+        for(int i = 0 ; i < teste;i++){
+        
+        System.out.println("Informe a quantidade de prisoneiros:");    
+        int prisoneiro = read.nextInt();
+        
+        System.out.println("Informe a quantidade de doces:");
+        int doces = read.nextInt();
+        
+        System.out.println("Escolha um número aleatório dentro da quantidade de prisoneiros para fazer o sorteio:");
+        int sorteio = read.nextInt();
+            /*
+             * A lógica realiza uma soma de sorteio, doces e subtrai 1 do resultado, com o resultado da soma, a gente 
+             * divide pela quantidade de prisoneiro e pega o resto da divisão para resposta.
+             */ 
+             ultimoSelecionado = (sorteio + doces - 1) % prisoneiro;
+             
+            if(ultimoSelecionado <= 0){
+                ultimoSelecionado = prisoneiro;
+            }
+            System.out.println("O último selecionado foi: " + ultimoSelecionado);
+        }
+        read.close();
+    }
+}

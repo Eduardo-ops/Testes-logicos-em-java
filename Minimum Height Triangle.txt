@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args){
+        
+        Scanner leia = new Scanner(System.in);
+        
+	/*  
+         * Declarações de variáveis e uma matriz 6x6  
+         */
+
+	System.out.println("Informa o valor de a:");
+        int b = leia.nextInt();
+	System.out.println("Informa o valor de b:");
+        int a = leia.nextInt();
+        int c = a;
+        int minimo = 0;
+        
+	/*  
+         * A lógica consiste em realizar o cálculo de soma entre a e dividir por b somado com 1 para chegar a resposta correta. 
+         */
+        if(a > b){
+            minimo = (a + a) / b + 1;
+            System.out.println(minimo);
+	
+	/*  
+         * Caso o a seja menor que b, muda-se apenas os valores das vairéveis no cálculo sem somar 1 no final. 
+         */
+        }else{
+            a = b;
+            b = c;
+            minimo = (a + a) / b;
+            System.out.println("Valor minimo é igual a: + "minimo);
+        }
+    }
+}
